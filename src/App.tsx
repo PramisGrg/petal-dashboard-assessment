@@ -1,23 +1,10 @@
-import { useCallback, useState } from "react";
-import { Button } from "./components/button";
+import { Button } from "./components/ui/button";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [clicks, setClicks] = useState(0);
-
-  const increment = () => setCount((prev) => prev + 1);
-
-  // 🔁 This function will be memoized — won't re-create unless `clicks` changes
-  const handleClick = useCallback(() => {
-    setClicks((prev) => prev + 1);
-  }, []);
-
   return (
     <div>
-      <h2>Count: {count}</h2>
-      <h2>Clicks: {clicks}</h2>
-      <Button handleClick={handleClick} label="Click Me" />
-      <button onClick={increment}>Increment Count</button>
+      <h1 className="bg-red-400">I am Pramis</h1>
+      <Button>Clicke me</Button>
     </div>
   );
 }
