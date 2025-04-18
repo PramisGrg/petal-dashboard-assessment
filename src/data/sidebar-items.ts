@@ -8,22 +8,22 @@ import {
 export const sidebarItems = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/",
     icon: LayoutDashboard,
   },
   {
     title: "Products",
-    url: "#",
+    url: "/products",
     icon: ShoppingCart,
   },
   {
     title: "Customer",
-    url: "#",
+    url: "/customers",
     icon: Users,
   },
   {
     title: "Analytics",
-    url: "#",
+    url: "/analytics",
     icon: ChartSpline,
   },
 ];

@@ -1,17 +1,8 @@
-import { AppSidebar } from "./components/sidebar/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
-import { Outlet } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routers/routes";
 
 function App() {
-  return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main>
-        <SidebarTrigger />
-        <Outlet />
-      </main>
-    </SidebarProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

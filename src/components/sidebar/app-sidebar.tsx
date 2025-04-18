@@ -10,10 +10,14 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { OrgSwitcher } from "./org-switcher";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 export function AppSidebar() {
+  const location = useLocation();
+
   return (
-    <Sidebar>
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <OrgSwitcher />
       </SidebarHeader>
@@ -21,16 +25,25 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2">
-              {sidebarItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {sidebarItems.map((item) => {
+                const isActive = location.pathname === item.url;
+
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      className={cn(
+                        isActive && "bg-sidebar-primary text-white"
+                      )}
+                      asChild
+                    >
+                      <Link to={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
