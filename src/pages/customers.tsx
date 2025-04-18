@@ -1,7 +1,7 @@
 const Customers = () => {
   return (
-    <div>
-      <h1>Customer</h1>
+    <div className="py-4 space-y-10">
+      <h1>This is Customers</h1>
     </div>
   );
 };
