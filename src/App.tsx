@@ -1,11 +1,16 @@
-import { Button } from "./components/ui/button";
+import { AppSidebar } from "./components/sidebar/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <h1 className="bg-red-400">I am Pramis</h1>
-      <Button>Clicke me</Button>
-    </div>
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <SidebarTrigger />
+        <Outlet />
+      </main>
+    </SidebarProvider>
   );
 }
 
