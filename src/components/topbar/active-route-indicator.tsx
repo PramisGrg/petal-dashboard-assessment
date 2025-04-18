@@ -6,7 +6,7 @@ const ActiveRouteIndicator = () => {
   const location = useLocation();
 
   return (
-    <ul className="flex gap-4">
+    <ul className="md:flex gap-4 hidden">
       {sidebarItems.map((item) => {
         const isActive = location.pathname === item.url;
         return (
