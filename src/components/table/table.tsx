@@ -40,6 +40,8 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { AddProductDialog } from "../modals/add-product";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -73,6 +75,8 @@ export function DataTable<TData, TValue>({
       columnVisibility,
     },
   });
+
+  const location = useLocation();
 
   return (
     <div className="space-y-4">
@@ -112,7 +116,7 @@ export function DataTable<TData, TValue>({
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button>Add Product</Button>
+          {location.pathname === "/products" && <AddProductDialog />}
         </div>
       </div>
       <div className="rounded-md border">

@@ -1,5 +1,5 @@
 import { ProductColumns } from "@/components/columns/product-column";
-import { DataTable } from "@/components/table/product-table";
+import { DataTable } from "@/components/table/table";
 import { productData } from "@/data/product-data";
 
 const Products = () => {
