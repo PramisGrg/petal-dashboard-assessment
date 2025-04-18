@@ -1,5 +1,5 @@
 import { SidebarTrigger } from "../ui/sidebar";
-import ActiveRouteIndicator from "./active-route-indicator";
+import BreadCrumbLabel from "./breadcrumb-label";
 import ProfileSearch from "./profile-search";
 
 const Topbar = () => {
@@ -7,7 +7,7 @@ const Topbar = () => {
     <section className="flex justify-between items-center">
       <div className="flex gap-4 items-center">
         <SidebarTrigger />
-        <ActiveRouteIndicator />
+        <BreadCrumbLabel />
       </div>
       <ProfileSearch />
     </section>
