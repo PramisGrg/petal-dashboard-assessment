@@ -1,15 +1,14 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
-import { MoreHorizontal } from "lucide-react";
-import { ArrowUpDown } from "lucide-react";
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { MoreHorizontal, ArrowUpDown } from "lucide-react";
 import { CustomerType } from "@/types/customer.type";
 
 export const CustomerColumns: ColumnDef<CustomerType>[] = [
@@ -53,7 +52,13 @@ export const CustomerColumns: ColumnDef<CustomerType>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
@@ -61,8 +66,8 @@ export const CustomerColumns: ColumnDef<CustomerType>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View Product</DropdownMenuItem>
-            <DropdownMenuItem>Delete Product</DropdownMenuItem>
+            <DropdownMenuItem>View Customer</DropdownMenuItem>
+            <DropdownMenuItem>Delete Customer</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

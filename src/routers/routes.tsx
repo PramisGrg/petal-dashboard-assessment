@@ -5,6 +5,7 @@ import Dashboard from "@/pages/dashboard";
 import Products from "@/pages/products";
 import Customers from "@/pages/customers";
 import Analytics from "@/pages/analytics";
+import Test from "@/pages/test";
 
 export const router = createBrowserRouter([
   {
@@ -28,5 +29,9 @@ export const router = createBrowserRouter([
         element: <Analytics />,
       },
     ],
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);
