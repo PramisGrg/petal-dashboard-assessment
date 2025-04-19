@@ -20,7 +20,7 @@ const ProfileSearch = () => {
           className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
           size={18}
         />
-        <Input type="text" placeholder="Search..." className="pl-10" />
+        <Input type="text" placeholder="Search..." className="pl-8" />
       </form>
 
       <DropdownMenu>

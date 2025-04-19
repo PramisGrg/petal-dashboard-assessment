@@ -19,7 +19,7 @@ const BreadCrumbLabel = () => {
   const location = useLocation();
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="hidden md:block">
       <BreadcrumbList>
         {routes.map((route, index) => {
           const isLast = index === routes.length - 1;
